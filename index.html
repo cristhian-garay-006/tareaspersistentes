@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <h1>Mis Tareas</h1>
+            <p id="date-display">Cargando fecha...</p>
+        </header>
+
+        <div class="input-group">
+            <input type="text" id="task-input" placeholder="¿Qué tienes que hacer hoy?" autocomplete="off">
+            <button id="add-btn" aria-label="Agregar tarea">
+                <span class="material-icons-round">add</span>
+            </button>
+        </div>
+
+        <div class="actions-bar">
+            <button id="json-btn" class="secondary-btn">
+                <span class="material-icons-round">data_object</span>
+                Ver JSON
+            </button>
+        </div>
+
+        <div class="tasks-container">
+            <ul id="task-list" class="task-list">
+                <!-- Las tareas se insertarán aquí dinámicamente -->
+            </ul>
+        </div>
+
+        <div class="empty-state" id="empty-state">
+            <span class="material-icons-round">task_alt</span>
+            <p>Todo limpio. ¡Disfruta tu día!</p>
+        </div>
+    </main>
+
+    <!-- Modal JSON -->
+    <div id="json-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Datos JSON</h2>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <pre id="json-output"></pre>
+            <button id="copy-btn" class="action-btn">Copiar al portapapeles</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
